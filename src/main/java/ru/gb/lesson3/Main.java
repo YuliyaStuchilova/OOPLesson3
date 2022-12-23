@@ -28,6 +28,12 @@ public class Main {
         }
         System.out.println();
 
+        while (studentIterator.hasPrevious()){
+            System.out.println(studentIterator.previous());
+            System.out.println(studentIterator.previousIndex());
+        }
+        System.out.println();
+
 
         Iterator<Student> it = studentGroup.descendingIterator();
 

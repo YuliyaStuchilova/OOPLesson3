@@ -10,7 +10,7 @@ public class GroupListIterator implements ListIterator<Student> {
 
     public GroupListIterator(StudentGroup studentGroup) {
         this.studentGroup = studentGroup;
-        this.lastIndex = this.studentGroup.getSize();
+        this.lastIndex = this.studentGroup.getSize() - 1;
     }
 
     @Override
@@ -25,12 +25,12 @@ public class GroupListIterator implements ListIterator<Student> {
 
     @Override
     public boolean hasPrevious() {
-        return lastIndex > 0;
+        return lastIndex >= 0;
     }
 
     @Override
     public Student previous() {
-        return studentGroup.get(--this.lastIndex);
+        return studentGroup.get(this.lastIndex--);
     }
 
     @Override
@@ -40,15 +40,18 @@ public class GroupListIterator implements ListIterator<Student> {
 
     @Override
     public int previousIndex() {
-        return lastIndex;
+        return lastIndex+1;
     }
 
     @Override
-    public void remove() { }
+    public void remove() {
+    }
 
     @Override
-    public void set(Student student) { }
+    public void set(Student student) {
+    }
 
     @Override
-    public void add(Student student) { }
+    public void add(Student student) {
+    }
 }
